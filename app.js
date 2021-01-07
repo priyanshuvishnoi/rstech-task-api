@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/usersRouter');
+const adminRouter = require('./routes/adminRouter');
 
 const url = process.env.DBURL;
 mongoose
@@ -36,5 +37,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 module.exports = app;
